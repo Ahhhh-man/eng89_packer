@@ -10,3 +10,4 @@ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(l
 ```terminal
 sudo apt-get update && sudo apt-get install packer
 ```
+> Remark: If the above doesn't work, you may need to do them seperately.
