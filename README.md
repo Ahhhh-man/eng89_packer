@@ -1,19 +1,19 @@
 # Packer
 
 ## Install Packer
-```terminal
+```shell
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 ```
-```terminal
+```shell
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 ```
-```terminal
+```shell
 sudo apt-get update && sudo apt-get install packer
 ```
 > Remark: If the above doesn't work, you may need to do them seperately.
 
 ## Setup file
-```
+```shell
 sudo nano aws-ubuntu.pkr.hcl
 ```
 ```
@@ -51,24 +51,24 @@ build {
 ```
 
 ## Setup aws keys
-```
+```shell
 export AWS_ACCESS_KEY_ID=YOUR_ACCESS_KEY
 ```
-```
+```shell
 export AWS_SECRET_ACCESS_KEY=YOUR_SECRET_KEY
 ```
 
 ## Initialize Packer configuration
-```
+```shell
 packer init .
 ```
-```
+```shell
 packer fmt .
 ```
 > Remark: you may need `sudo` if permission denied.
-```
+```shell
 packer validate .
 ```
-```
+```shell
 packer build aws-ubuntu.pkr.hcl
 ```
